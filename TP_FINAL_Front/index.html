@@ -10,17 +10,27 @@
 </head>
 
 <style>
+
+.clase_nav{
+ background-color: #454647
+}
+  
 .class-btn-enviar{
   background-color: #98ca50;
 }
+
+.clase_footer{
+ background-color: #454647
+}
 </style>
+
 
 <body>
 
 
 <header>
 
-      <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: #454647">
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark clase_nav">
       <div class="container">
         <a class="navbar-brand" href="#">
           <img src="./img/codoacodo.png" alt="" width="100" height="" style="vertical-align: middle">
@@ -176,7 +186,7 @@
 
         </div>
 
-        <div class="col-sm-12 col-md-10"> <!-- offset-md-2 -->
+        <div class="col-sm-12 col-md-8"> <!-- offset-md-2 -->
           <span>
             Anótate como orador para dar una <abbr title="attribute">charla ignite</abbr>. Cuéntanos de qué quieres hablar!
           </span>
@@ -200,7 +210,11 @@
               </div>
  
             </div>
-            <button type="submit" class="btn btn-success container-fluid mt-2 class-btn-enviar border border-light">Enviar</button>
+            <button type="submit" 
+            class="btn btn-success 
+            container-fluid mt-2 
+            class-btn-enviar border
+             border-light mb-5">Enviar</button>
           </form>
         </div>
 
@@ -218,7 +232,7 @@
 
 
   <footer>
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #454647">
+    <nav class="navbar navbar-expand-lg navbar-dark clase_footer" >
       <div class="container">
         <ul class="navbar-nav" style="justify-content: space-between; width: 100%">
           <li class="nav-item">
