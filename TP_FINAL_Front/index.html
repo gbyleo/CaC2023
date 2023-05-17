@@ -24,7 +24,7 @@
 }
 
 .clase-carousel{
-height: 10%;
+height: 100vh;
 }
 
 </style>
@@ -67,40 +67,58 @@ height: 10%;
   
 </header>
 
-<!-- Carrousel con imagenes +texto-->
 
-<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="./img/ba1.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="./img/ba2.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="./img/ba3.jpg" class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Anterior</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Siguiente</span>
-  </button>
-</div>
-
-
-<!-- fin carousel -->
-
-
-
-
-<!-- </section> -->
 
 
   <main>
+
+    <section> <!-- Carrousel con imagenes +texto-->
+
+
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        
+        <div class="carousel-inner clase-carousel">
+              
+          <div class="carousel-item active">
+            <img src="./img/ba1.jpg" class="d-block w-100 position-absolute fit-cover" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./img/ba2.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./img/ba3.jpg" class="d-block w-100" alt="...">
+          </div>
+
+          <div class="card position-absolute top-50 start-50" style="width: 50%;">
+            <div class="card-img-overlay ">
+              <h5 class="card-title text-light text-end">Conf Bs As</h5>
+              <p class="card-text text-light text-end">Bs As llega por primera vez a Argentina. Un Evento para compartir con nuestra comunidad el conocimiento y experiencia de los expertos que están creando el futuro de Internet. Ven a conocer a miembres del evento, a otros estudiantes de Codo a Codo y los oradores de primer nivel que tenemos para ti. Te esperamos!.</p>
+              <div class="d-flex justify-content-end">
+              <a href="#" class="m-1 btn btn-light">Quiero ser orador</a>
+              <a href="#" class="m-1 btn btn-success ">Comprar Ticket</a>
+            </div>
+            </div>
+          </div>
+
+
+
+        </div>
+  
+        
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+        
+      </div>
+      </section>
+
+     
+
     <section class="container">
       <div class="row">
         <div class="col text-center">
