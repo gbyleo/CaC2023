@@ -52,16 +52,16 @@ height: 100vh;
               <a class="nav-link active" aria-current="page" href="#">La Conferencia</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Los Oradores</a>
+              <a class="nav-link" href="#idOradores">Los Oradores</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">El Lugar y La Fecha</a>
+              <a class="nav-link" href="#idLugFec">El Lugar y La Fecha</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Conviértete en Orador</a>
+              <a class="nav-link" href="#convOrad">Conviértete en Orador</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="comprar-tickets.html">Comprar Tickets</a>
+              <a class="nav-link" href="./tickets.html">Comprar Tickets</a>
             </li>
           </ul>
         </div>
@@ -81,7 +81,7 @@ height: 100vh;
 
       <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         
-        <div class="carousel-inner clase-carousel">
+        <div class="carousel-inner clase-carousel" style="height: 90vh;">
               
           <div class="carousel-item active">
             <img src="./img/ba1.jpg" class="d-block w-100 position-absolute fit-cover" alt="...">
@@ -93,13 +93,14 @@ height: 100vh;
             <img src="./img/ba3.jpg" class="d-block w-100" alt="...">
           </div>
 
-          <div class="card position-absolute top-50 start-50 border-0" style="width: 50%;">
-            <div class="card-img-overlay">
+          <div class="card position-absolute top-50 start-50 border-0" style="width: 50%; background-color: rgba(0, 0, 0, 0.6)">
+            <div class="card-img-overlay" style="margin-right: 15vw;">
               <h5 class="card-title text-light text-end">Conf Bs As</h5>
               <p class="card-text text-white text-end">Bs As llega por primera vez a Argentina. Un Evento para compartir con nuestra comunidad el conocimiento y experiencia de los expertos que están creando el futuro de Internet. Ven a conocer a miembres del evento, a otros estudiantes de Codo a Codo y los oradores de primer nivel que tenemos para ti. Te esperamos!.</p>
               <div class="d-flex justify-content-end">
               <a href="#" class="m-1 btn btn-light">Quiero ser orador</a>
-              <a href="#" class="m-1 btn btn-success">Comprar Ticket</a>
+              <a href="tickets.html" class="m-1 btn btn-success">Comprar Tickets</a>
+              </div>
             </div>
             </div>
           </div>
@@ -123,7 +124,7 @@ height: 100vh;
 
      
 
-    <section class="container">
+    <section class="container" id="idOradores">
       <div class="row">
         <div class="col text-center">
           <p class="text-uppercase">Conoce a los</p>
@@ -180,7 +181,7 @@ height: 100vh;
 
     </section>
 
-    <section class="container-fluid">
+    <section class="container-fluid" id="idLugFec">
       <div class="row">
         <div class="col-sm-12 col-lg-6 g-0">
           <img class="card-img-top" src="./img/honolulu.jpg" alt="Card image cap">
@@ -203,7 +204,7 @@ height: 100vh;
     <section class="container-fluid g-0">
       <div class="row justify-content-center ">
 
-        <div class="col-12 text-center">
+        <div class="col-12 text-center" id="convOrad">
           <span>CONVIÉRTETE EN UN</span>
           <h2>ORADOR</h2>
 
