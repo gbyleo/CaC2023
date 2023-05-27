@@ -23,6 +23,8 @@
         }
     </style>
 
+  <script src="./js/tickets.js"></script>
+
   </head>
 
 
@@ -137,14 +139,14 @@
             <div class="row">
               <div class="col-md-6">
                 <label for="validationCustom01_nom" class="form-label"></label>
-                <input type="text" class="form-control" id="validationCustom01_nom" value="Nombre" required>
+                <input type="text" class="form-control" id="validationCustom01_nom" placeholder="Nombre" required>
                 <div class="valid-feedback">
                   Looks good!
                 </div>
               </div>
               <div class="col-md-6">
                 <label for="validationCustom01_ap" class="form-label"></label>
-                <input type="text" class="form-control" id="validationCustom01_ap" value="Apellido" required>
+                <input type="text" class="form-control" id="validationCustom01_ap" placeholder="Apellido" required>
                 <div class="valid-feedback">
                   Looks good!
                 </div>
@@ -154,7 +156,7 @@
             <div class="row">
               <div class="col-md-12">
                 <label for="validationCustom01_correo" class="form-label"></label>
-                <input type="text" class="form-control" id="validationCustom01_correo" value="correo" required>
+                <input type="text" class="form-control" id="validationCustom01_correo" placeholder="correo" required>
                 <div class="valid-feedback">
                   Looks good!
                 </div>
@@ -165,16 +167,16 @@
             <div class="row mt-3">
 
               <div class="col-md-6 col-sm-6 border-1">
-                <label class="form-label" for="typeNumber">Cantidad</label>
-                <input type="number" id="typeNumber" placeholder="cantidad" class="form-control" min="0" />
+                <label class="form-label" for="vc_cantidad">Cantidad</label>
+                <input type="number" id="vc_cantidad" placeholder="cantidad" class="form-control" min="0" />
               </div>
 
               <div class="col-md-6 col-sm-6 border-1 border-success">
                 <label for="select" for="categoria">Categoria</label>
                 <select class="form-select mt-2" name="categoria" id="categoria">
-                  <option value="1">Estudiante</option>
-                  <option value="2">Trainee</option>
-                  <option value="3">Junior</option>
+                  <option value="80">Estudiante</option>
+                  <option value="50">Trainee</option>
+                  <option value="15">Junior</option>
                   <div class="valid-feedback">
                     Looks good!
                   </div>
@@ -196,11 +198,11 @@
             <div class="row mt-1" style="margin-bottom: 50vh">
 
               <div class="col-6">
-                <button class="btn btn-success container" type="button" onclick="borrar">Borrar</button>
+                <button class="btn btn-success container" type="button" onclick="borrar()">Borrar</button>
               </div>
 
               <div class="col-6">
-                <button class="btn btn-success container" type="button" onclick="resumen">Resumen</button>
+                <button class="btn btn-success container" type="button" onclick="resumen()">Resumen</button>
               </div>
             </div>
 
@@ -252,7 +254,7 @@
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
     </script>
 
-    <script src="./tickets.js"></script>
+   
 
 </body>
 
