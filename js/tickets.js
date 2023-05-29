@@ -13,15 +13,16 @@ function resumen() {
     const apunta_resultado = document.getElementById("precioPagar");
     const apunta_vc_cantidad = document.getElementById("vc_cantidad");
     let categoria_elegida = parseInt(categoria.value);
-    
-    
-if (validationCustom01_nom.value !="" && validationCustom01_ap.value !="" && validationCustom01_correo.value!="" && vc_cantidad.value !=""){
-    resultado = apunta_vc_cantidad.value * (valor - ((categoria_elegida * valor) / 100));
-    apunta_resultado.innerText = resultado;
-}
-else{
-    alert("Completar datos")
-}
+
+
+    if (validationCustom01_nom.value !== "" && validationCustom01_ap.value !== "" && validationCustom01_correo.value !== "" && vc_cantidad.value !== "") {
+        resultado = apunta_vc_cantidad.value * (valor - ((categoria_elegida * valor) / 100));
+        apunta_resultado.innerText = resultado;
+    }
+    else {
+        alert("Completar datos");
+        return;
+    }
 }
 
 
