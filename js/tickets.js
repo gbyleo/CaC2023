@@ -12,9 +12,13 @@ function borrar() {
 
 function resumen() {
     let resultado = 0;
-    const apunta_resultado = document.getElementById("precioPagar")
+    const apunta_resultado = document.getElementById("precioPagar");
+    const apunta_vc_cantidad = document.getElementById("vc_cantidad");
+
     let categoria_elegida = parseInt(categoria.value);
-    resultado = vc_cantidad.value * (valor - ((categoria_elegida * valor) / 100));
+    
+    
+    resultado = apunta_vc_cantidad.value * (valor - ((categoria_elegida * valor) / 100));
     apunta_resultado.innerText = resultado;
 }
 
