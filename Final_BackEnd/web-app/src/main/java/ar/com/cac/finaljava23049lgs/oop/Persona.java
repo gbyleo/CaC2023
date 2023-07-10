@@ -8,11 +8,11 @@ import java.time.temporal.ChronoUnit;
 public class Persona {
 
     //atributos
-    String apellido;
-    String nombre;
-    int edad;
-    boolean tieneUsuario;
-    String foto;
+    protected String apellido;
+    protected String nombre;
+    protected int edad;
+    protected boolean tieneUsuario;
+    protected String foto;
 
     //constructor
     public Persona(String apellido, String nombre, int edad){
@@ -25,12 +25,25 @@ public class Persona {
     }
 
     //metodos
-    String mostrarFoto(){
+    public String mostrarFoto(){
     return this.foto;
     }
 
-    boolean tieneUsuario(){
+    public boolean tieneUsuario(){
     return this.tieneUsuario;
     }
+
+    
+
+
+
+
+    @Override
+    public String toString() {
+        return "Persona [apellido=" + apellido + ", nombre=" + nombre + ", edad=" + edad + ", tieneUsuario="
+                + tieneUsuario + ", foto=" + foto + "]";
+    }
+
+    
    
 }

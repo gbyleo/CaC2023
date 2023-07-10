@@ -1,5 +1,8 @@
 package ar.com.cac.finaljava23049lgs;
 
+import ar.com.cac.finaljava23049lgs.oop.Persona;
+import ar.com.cac.finaljava23049lgs.oop.Usuario;
+
 /**
  * Hello world!
  *
@@ -8,6 +11,14 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        Persona persona1 = new Persona("Perez", "Jorge", 25);
+        System.out.println(persona1);
+
+        Usuario usuario1 = new Usuario("userTest", "Clavetest", 68,"user1","pass1");
+        System.out.println(usuario1);
     }
+
+    
+
 }
+
