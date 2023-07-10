@@ -14,8 +14,13 @@ public class App
         Persona persona1 = new Persona("Perez", "Jorge", 25);
         System.out.println(persona1);
 
-        Usuario usuario1 = new Usuario("userTest", "Clavetest", 68,"user1","pass1");
+        Usuario usuario1 = new Usuario("userTest", "nombretest", 68,"user1","pass1");
         System.out.println(usuario1);
+
+        Persona usuper = new Usuario("userConte", "nombreConte", 15,"userConte","passConte");
+        System.out.println(usuper);
+
+        
     }
 
     
