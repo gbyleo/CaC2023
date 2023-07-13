@@ -64,8 +64,7 @@ public class DAOImpl implements DAO{
     pst.setBoolean(4, persona.isTieneUsuario());
     pst.setString(5, persona.getFoto());
     pst.setDate(6, this.dateFrom(persona.getFechaRegistro()));//fecha LocalDateTime > jdbc > java.sql.Date
-    pst.setString((7), (randomChar()+ "-COD-"+ randomChar()));
-
+    pst.setString((7), (persona.getCodigo() + "-COD-" + randomChar()));
     /*
     private String user;
     private String pass;

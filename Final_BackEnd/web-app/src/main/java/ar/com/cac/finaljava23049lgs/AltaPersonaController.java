@@ -37,18 +37,19 @@ public class AltaPersonaController
 
         //CREATE CONTROLLER 
         //Del front tendria que obtener los siguientes valores:
-        String apellido ="del form";
-        String nombre = "del form";
+        String apellido ="NombreDePrueba";
+        String nombre = "ApeDePrueba";
         int edad = 10 ;
         boolean tieneUsuario = true;
         String foto = "fotoinstancia";
         LocalDateTime fechaRegistro = LocalDateTime.now();
         String user= "del form";
         String pass ="del form";
-        LocalDate fechaCreacion = LocalDate.now();
+        String codigo = "XYZ";
+
         
         
-        Persona nuevaPersona = new Usuario(apellido,nombre,edad,user,pass,fechaRegistro);
+        Persona nuevaPersona = new Usuario(apellido,nombre,edad,user,pass,fechaRegistro,codigo);
 
         //interface nombre = new claseQueLaImplementa();
         DAO dao = new DAOImpl();

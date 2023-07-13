@@ -14,18 +14,20 @@ public class Persona {
     protected boolean tieneUsuario;
     protected String foto;
     protected LocalDateTime fechaRegistro;
+    protected String codigo;
     
     
   
 
     //constructor
-    public Persona(String apellido, String nombre, int edad, LocalDateTime fechaRegistro){
+    public Persona(String apellido, String nombre, int edad, LocalDateTime fechaRegistro, String codigo){
         this.apellido = apellido;
         this.nombre = nombre;
         this.edad = edad;
         this.tieneUsuario = false;
         this.foto = "";
-        this.fechaRegistro = LocalDateTime. now();
+        this.fechaRegistro = fechaRegistro;
+        this.codigo = codigo;
         
         
 
@@ -98,6 +100,15 @@ public class Persona {
     public void setFechaRegistro(LocalDateTime fechaRegistro) {
         this.fechaRegistro = fechaRegistro;
     }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+    
 
     
    

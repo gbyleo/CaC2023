@@ -17,11 +17,12 @@ public Usuario(String apellido,
         int edad, 
         String user, 
         String pass,
-        LocalDateTime fechaRegistro
+        LocalDateTime fechaRegistro,
+        String codigo
         ) {
         
             //crea padre
-            super(apellido, nombre, edad, fechaRegistro);
+            super(apellido, nombre, edad, fechaRegistro,codigo);
             //crea hijo
             this.user = user;
             this.apellido =apellido;
