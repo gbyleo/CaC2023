@@ -48,7 +48,7 @@ public class AltaPersonaController
         LocalDate fechaCreacion = LocalDate.now();
         
         
-        Persona nuevaPersona = new Usuario(apellido, nombre,edad, user, pass);
+        Persona nuevaPersona = new Usuario(apellido,nombre,edad,user,pass,fechaRegistro);
 
         //interface nombre = new claseQueLaImplementa();
         DAO dao = new DAOImpl();

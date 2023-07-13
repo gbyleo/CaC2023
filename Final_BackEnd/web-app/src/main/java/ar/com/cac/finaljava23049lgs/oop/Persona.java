@@ -15,16 +15,18 @@ public class Persona {
     protected String foto;
     protected LocalDateTime fechaRegistro;
     
+    
   
 
     //constructor
-    public Persona(String apellido, String nombre, int edad){
+    public Persona(String apellido, String nombre, int edad, LocalDateTime fechaRegistro){
         this.apellido = apellido;
         this.nombre = nombre;
         this.edad = edad;
         this.tieneUsuario = false;
         this.foto = "";
         this.fechaRegistro = LocalDateTime. now();
+        
         
 
     }

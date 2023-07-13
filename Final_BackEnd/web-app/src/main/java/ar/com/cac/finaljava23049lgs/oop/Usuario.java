@@ -1,6 +1,7 @@
 package ar.com.cac.finaljava23049lgs.oop;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 //creo a clase usuario como hijo de clase Persona
 public class Usuario extends Persona {
@@ -15,11 +16,12 @@ public Usuario(String apellido,
         String nombre, 
         int edad, 
         String user, 
-        String pass
+        String pass,
+        LocalDateTime fechaRegistro
         ) {
         
             //crea padre
-            super(apellido, nombre, edad);
+            super(apellido, nombre, edad, fechaRegistro);
             //crea hijo
             this.user = user;
             this.apellido =apellido;

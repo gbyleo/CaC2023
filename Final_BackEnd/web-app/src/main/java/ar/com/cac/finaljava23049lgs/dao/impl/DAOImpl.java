@@ -3,9 +3,15 @@ package ar.com.cac.finaljava23049lgs.dao.impl;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Random;
 import com.mysql.cj.xdevapi.PreparableStatement;
+import java.sql.Date;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.time.ZoneId;
+
 
 import ar.com.cac.finaljava23049lgs.db.AdministradorDeConexiones;
 import ar.com.cac.finaljava23049lgs.oop.Persona;
@@ -40,8 +46,8 @@ public class DAOImpl implements DAO{
     @Override
     public void create(Persona persona) throws Exception {
         String sql = "insert into personas";
-        sql += "(apellido,nombre,edad,tieneusuario,foto,codigo)";
-        sql += "values(?,?,?,?,?,?)";
+        sql += "(apellido,nombre,edad,tieneusuario,foto,fecha_registro,codigo)";
+        sql += "values(?,?,?,?,?,?,?)";
 
     
 
@@ -57,7 +63,8 @@ public class DAOImpl implements DAO{
     pst.setInt(3, persona.getEdad());
     pst.setBoolean(4, persona.isTieneUsuario());
     pst.setString(5, persona.getFoto());
-    pst.setString((6), (randomChar()+ "-COD-"+ randomChar()));
+    pst.setDate(6, this.dateFrom(persona.getFechaRegistro()));//fecha LocalDateTime > jdbc > java.sql.Date
+    pst.setString((7), (randomChar()+ "-COD-"+ randomChar()));
 
     /*
     private String user;
@@ -72,6 +79,13 @@ public class DAOImpl implements DAO{
 
 
 }
+
+  private Date dateFrom(LocalDateTime ldt) {
+        java.util.Date date = Date.from(ldt.toLocalDate().atStartOfDay(ZoneId.systemDefault()).toInstant());
+        return new java.sql.Date(date.getTime());
+  }
+
+
  
 //defino metodo para tener un caracter random asino se me reptie el codigo que es unique
 private static char randomChar() {
