@@ -23,7 +23,6 @@ public Usuario(String apellido,
             //crea hijo
             this.user = user;
             this.apellido =apellido;
-            this.fechaCreacion = LocalDate.now();
             this.tieneUsuario= true;
 }
 

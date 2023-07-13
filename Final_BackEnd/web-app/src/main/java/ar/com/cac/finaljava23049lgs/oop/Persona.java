@@ -13,6 +13,9 @@ public class Persona {
     protected int edad;
     protected boolean tieneUsuario;
     protected String foto;
+    protected LocalDateTime fechaRegistro;
+    
+  
 
     //constructor
     public Persona(String apellido, String nombre, int edad){
@@ -21,6 +24,8 @@ public class Persona {
         this.edad = edad;
         this.tieneUsuario = false;
         this.foto = "";
+        this.fechaRegistro = LocalDateTime. now();
+        
 
     }
 
@@ -41,7 +46,55 @@ public class Persona {
     @Override
     public String toString() {
         return "Persona [apellido=" + apellido + ", nombre=" + nombre + ", edad=" + edad + ", tieneUsuario="
-                + tieneUsuario + ", foto=" + foto + "]";
+                + tieneUsuario + ", foto=" + foto + "fechaRegistro=" + fechaRegistro +";]";
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public boolean isTieneUsuario() {
+        return tieneUsuario;
+    }
+
+    public void setTieneUsuario(boolean tieneUsuario) {
+        this.tieneUsuario = tieneUsuario;
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
+    }
+
+    public LocalDateTime getFechaRegistro() {
+        return fechaRegistro;
+    }
+
+    public void setFechaRegistro(LocalDateTime fechaRegistro) {
+        this.fechaRegistro = fechaRegistro;
     }
 
     
