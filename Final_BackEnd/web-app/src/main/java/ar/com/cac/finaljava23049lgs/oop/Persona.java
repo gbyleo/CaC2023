@@ -8,6 +8,7 @@ import java.time.temporal.ChronoUnit;
 public class Persona {
 
     //atributos
+    protected Long id;
     protected String apellido;
     protected String nombre;
     protected int edad;
@@ -21,6 +22,24 @@ public class Persona {
 
     //constructor
     public Persona(String apellido, String nombre, int edad, LocalDateTime fechaRegistro, String codigo){
+        extracted(apellido, nombre, edad, fechaRegistro, codigo);
+     }
+
+       // segundo constructor
+    public Persona(Long id, String apellido, String nombre, int edad, LocalDateTime fechaRegistro, String codigo){
+        extracted(apellido, nombre, edad, fechaRegistro, codigo);
+        this.id = id;
+     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    private void extracted(String apellido, String nombre, int edad, LocalDateTime fechaRegistro, String codigo) {
         this.apellido = apellido;
         this.nombre = nombre;
         this.edad = edad;
@@ -28,10 +47,9 @@ public class Persona {
         this.foto = "";
         this.fechaRegistro = fechaRegistro;
         this.codigo = codigo;
-        
-        
-
     }
+
+
 
     //metodos
     public String mostrarFoto(){

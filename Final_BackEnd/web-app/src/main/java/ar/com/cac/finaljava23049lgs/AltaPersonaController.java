@@ -1,21 +1,42 @@
 package ar.com.cac.finaljava23049lgs;
 
-import java.time.LocalDate;
+import java.io.IOException;
+//import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import ar.com.cac.finaljava23049lgs.dao.impl.DAO;
 import ar.com.cac.finaljava23049lgs.dao.impl.DAOImpl;
 import ar.com.cac.finaljava23049lgs.oop.Persona;
 import ar.com.cac.finaljava23049lgs.oop.Usuario;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+/*
+import java.io.IOException;
+import java.time.LocalDateTime;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+*/
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
 
 /**
  * Hello world!
  *
  */
-public class AltaPersonaController 
-{
-    public static void main( String[] args ) throws Exception
-    {
+@WebServlet("/AltaPersonaController")
+public class AltaPersonaController extends HttpServlet{
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException{
+
+
+    
+   
+   
        
        /*
         Persona persona1 = new Persona("Perez", "Jorge", 25);
@@ -30,18 +51,20 @@ public class AltaPersonaController
          */
 
        
-
+        /*
         //hablar puedo usar los metodos de dao sin saber quien cumple el contrato
         //usando los metodos que tiene la dao sin saber quien cumple el contrato
 
 
         //CREATE CONTROLLER 
         //Del front tendria que obtener los siguientes valores:
+         */
+        
         String apellido ="NombreDePrueba";
         String nombre = "ApeDePrueba";
         int edad = 10 ;
-        boolean tieneUsuario = true;
-        String foto = "fotoinstancia";
+        //boolean tieneUsuario = true;
+        //String foto = "fotoinstancia";
         LocalDateTime fechaRegistro = LocalDateTime.now();
         String user= "del form";
         String pass ="del form";

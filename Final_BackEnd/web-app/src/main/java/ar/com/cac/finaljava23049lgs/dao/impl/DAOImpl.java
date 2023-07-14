@@ -24,12 +24,26 @@ public class DAOImpl implements DAO{
 
     @Override //para cumplir contrato entre DAO y esta clase
     public Persona getById(long id) {
-        return new Usuario("PerezController", "JorgeController", 80, "control", "passcontrol");
+        return new Usuario("PerezController", "JorgeController", 80, "control", "passcontrol",LocalDateTime.now(),"AAA");
+
     }
 
+
+
     @Override
-    public void delete(long id) {
-     String sql = "delete from personas where id = " + id;
+    public void delete(long id) throws SQLException {
+     String sql = "delete from personas where id = ? ";
+
+         // Obtener Conection 
+    Connection con = AdministradorDeConexiones.getConnection();
+    // Prepared Statement con Mysql   para pasar la sentencia
+    PreparedStatement pst = con.prepareStatement(sql);
+
+    pst.setLong(1, id);
+
+    pst.executeUpdate();  //modifico la base con execute update
+
+
     }
 
     @Override

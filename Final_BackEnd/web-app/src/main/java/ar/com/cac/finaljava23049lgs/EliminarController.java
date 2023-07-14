@@ -1,16 +1,10 @@
 package ar.com.cac.finaljava23049lgs;
 
-public class EliminarController {
-    
-}
-
-/*
-package ar.com.codoacodo.controllers;
-
 import java.io.IOException;
+//import javax.servlet.http.HttpServlet;
+import ar.com.cac.finaljava23049lgs.dao.impl.DAO;
+import ar.com.cac.finaljava23049lgs.dao.impl.DAOImpl;
 
-import ar.com.codoacodo.dao.DAO;
-import ar.com.codoacodo.dao.impl.MysqlDaoImpl;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -19,28 +13,25 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/EliminarController")
 public class EliminarController extends HttpServlet{
- 
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+       
+    String id = req.getParameter("id");
 
-        String id = req.getParameter("id");
-        
-        DAO dao = new MysqlDaoImpl();
-        
-        try {
-            dao.delete(Long.parseLong(id));
+    DAO dao = new DAOImpl();
 
-            //redirect al /ListadoController
-            req.setAttribute("aliminadook", "Se ha eliminado el producto id:" + id);
-
-            getServletContext().getRequestDispatcher("/ListadoProductosController").forward(req, resp);
-        } catch (Exception e) {
-            e.printStackTrace();
-            
-            req.setAttribute("aliminadofail", "Error eliminado el producto id:" + id);
-
-            getServletContext().getRequestDispatcher("/ListadoProductosController").forward(req, resp);
-        }
-    }
+try {
+        dao.delete(Long.parseLong(id));
+} catch (Exception e) {
+   e.printStackTrace();
 }
-*/
+
+
+        
+    }
+
+   
+
+
+}

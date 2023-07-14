@@ -1,47 +1,47 @@
 package ar.com.cac.finaljava23049lgs;
 
-public class ListadoPersonasController {
-    
-}
-
-/*
-
-package ar.com.codoacodo.controllers;
-
 import java.io.IOException;
 import java.util.ArrayList;
 
-import ar.com.codoacodo.dao.DAO;
-import ar.com.codoacodo.dao.impl.MysqlDaoImpl;
-import ar.com.codoacodo23069.Producto;
+import ar.com.cac.finaljava23049lgs.dao.impl.DAO;
+import ar.com.cac.finaljava23049lgs.dao.impl.DAOImpl;
+import ar.com.cac.finaljava23049lgs.oop.Persona;
+import ar.com.cac.finaljava23049lgs.oop.Usuario;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/ListadoProductosController")
-public class ListadoProductosController extends HttpServlet{
- 
+@WebServlet("/ListadoPersonasController")
+public class ListadoPersonasController extends HttpServlet {
+
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
-        DAO dao = new MysqlDaoImpl();
-        
+        // interface nombre = new claseQueLaImplementa();
+        DAO dao = new DAOImpl();
+
         try {
-            ArrayList<Producto> productos =  dao.findAll();
+            ArrayList<Persona> listado = dao.findAll();
 
-            //guardo en la request algo!
+            System.out.println(listado);
 
-            req.setAttribute("listado", productos);
+            // guardar en request de tomcat
+            req.setAttribute("listado", listado);
 
-            //ahora anda a la vista listado.jsp
-            req.getRequestDispatcher("listado.jsp").forward(req, resp);//interna!!!
+            // redireccion
+            getServletContext().getRequestDispatcher("listado.jsp").forward(req, res);
+
         } catch (Exception e) {
-            e.printStackTrace();
 
-            req.setAttribute("listado", new ArrayList<>());
-            req.getRequestDispatcher("listado.jsp").forward(req, resp);//interna!!!
+
+            var listado = new ArrayList<>();
+            req.setAttribute("listado", listado);
+             
+            //habiendo error o no lo redirecciono a listado.jsp
+               getServletContext().getRequestDispatcher("listado.jsp").forward(req, res);
         }
     }
-}*/
+}
