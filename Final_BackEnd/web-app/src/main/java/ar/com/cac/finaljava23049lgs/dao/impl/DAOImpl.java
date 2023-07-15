@@ -11,6 +11,17 @@ import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.ZoneId;
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.ArrayList;
+
+
 
 
 import ar.com.cac.finaljava23049lgs.db.AdministradorDeConexiones;
@@ -23,13 +34,38 @@ public class DAOImpl implements DAO{
     
 
     @Override //para cumplir contrato entre DAO y esta clase
-    public Persona getById(long id) {
-        return new Usuario("PerezController", "JorgeController", 80, "control", "passcontrol",LocalDateTime.now(),"AAA");
+    public Persona getById(long id) throws Exception{
+        String sql = "select * from personas where id =?";
+
+        //Obtener la Conection
+        Connection con = AdministradorDeConexiones.getConnection();
+
+        //PreparedStatement con mi sql
+        PreparedStatement pst = con.prepareStatement(sql);
+
+        pst.setLong(1,id);
+
+        Persona persona = null;
+
+        ResultSet res = pst.executeQuery();
+
+        if(res.next()) {
+                       
+            Long _id = res.getLong(1);
+            String apellido = res.getString(2);
+            String nombre = res.getString(3);
+            int edad = res.getInt(4);
+            Date fechaRegistro = res.getDate(5);
+            String codigo = res.getString(6);
+
+            persona = new Persona(_id,apellido, nombre, edad, LocalDateTime.now(), codigo);
+        }
+        return persona;
 
     }
 
-
-
+	
+       
     @Override
     public void delete(long id) throws SQLException {
      String sql = "delete from personas where id = ? ";
@@ -47,10 +83,37 @@ public class DAOImpl implements DAO{
     }
 
     @Override
-    public ArrayList<Persona> findAll() {
+    public ArrayList<Persona> findAll() throws Exception{
         String sql = "select * from personas";
-        return null;
+       
+    //Obtener la Conection
+        Connection con = AdministradorDeConexiones.getConnection();
+
+        //PreparedStatement con mi sql
+        PreparedStatement pst = con.prepareStatement(sql);
+
+        ArrayList<Persona> listado = new ArrayList<>();
+
+        ResultSet res = pst.executeQuery();
+
+        while(res.next()) {
+
+            Long id = res.getLong(1);
+            String apellido = res.getString(2);
+            String nombre = res.getString(3);
+            int edad = res.getInt(4);
+            Date fechaRegistro = res.getDate(5);
+            String codigo = res.getString(6);
+     
+
+            listado.add(new Persona(id,apellido, nombre, edad, LocalDateTime.now(), codigo));
+
+        }
+        return listado;
     }
+
+
+
 
     @Override
     public void update(Persona persona) {

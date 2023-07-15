@@ -9,9 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CaC23049</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./estilos.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="oscuro navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Navbar</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,7 +25,7 @@
                 <a class="nav-link active" aria-current="page" href="nuevo.jsp">Nuevo</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="<%=request.getContextPath()%>/ListadoArticuloController">Listado</a>
+                <a class="nav-link active" aria-current="page" href="<%=request.getContextPath()%>/ListadoPersonasController">Listado</a>
               </li>              
             </ul>
             <form class="d-flex" role="search">
@@ -37,7 +39,13 @@
         <div class="row">
             <div class="col-12">
                 <section>
-                    <h1>CaC #23049 - Proyecto Integrador Java - Crud Articulos</h1>                    
+                  <h1>Proyecto Integrador Java  </h1>   
+                  <h2>
+                    <i class="bi bi-universal-access"></i> Crud PERSONAS <i class="bi bi-universal-access"></i>
+                  </h2>
+                  <h3>
+                    CaC #23049 -
+                  </h3>                                 
                 </section>
             </div>
         </div>

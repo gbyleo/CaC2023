@@ -15,10 +15,11 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/ListadoPersonasController")
+              
 public class ListadoPersonasController extends HttpServlet {
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
         // interface nombre = new claseQueLaImplementa();
         DAO dao = new DAOImpl();
@@ -32,16 +33,22 @@ public class ListadoPersonasController extends HttpServlet {
             req.setAttribute("listado", listado);
 
             // redireccion
-            getServletContext().getRequestDispatcher("listado.jsp").forward(req, res);
+           // getServletContext().getRequestDispatcher("listado.jsp").forward(req, res);
 
         } catch (Exception e) {
 
 
             var listado = new ArrayList<>();
             req.setAttribute("listado", listado);
+
+             //error
+            req.setAttribute("error", true);
+
              
             //habiendo error o no lo redirecciono a listado.jsp
-               getServletContext().getRequestDispatcher("listado.jsp").forward(req, res);
+               getServletContext().getRequestDispatcher("/listado.jsp").forward(req, res);
         }
+
+
     }
 }
