@@ -71,11 +71,11 @@
                       <thead>
                         <tr>
                           <th scope="col">#</th>
-                          <th scope="col">Título</th>
-                          <th scope="col">Código</th>
-                          <th scope="col">Precio</th>
-                          <th scope="col">Fecha</th>
-                          <th scope="col">Acciones</th>
+                          <th scope="col">Apellido</th>
+                          <th scope="col">Nombre</th>
+                          <th scope="col">Edad</th>
+                          <th scope="col">Codigo</th>
+                          
                         </tr>
                       </thead>
                       <tbody>
@@ -84,10 +84,10 @@
                           %>
                               <tr>
                                 <th scope="row"><%=unapersona.getId()%></th>
+                                  <td><%=unapersona.getApellido()%></td>
                                   <td><%=unapersona.getNombre()%></td>
-                                  <td><%=unapersona.getNombre()%></td>
-                                  <td><%=unapersona.getNombre()%></td>
-                                  <td><%=unapersona.getNombre()%></td>
+                                  <td><%=unapersona.getEdad()%></td>
+                                  <td><%=unapersona.getCodigo()%></td>
                                   <td>
                                       <a href="<%=request.getContextPath()%>/EliminarController?id=<%=unapersona.getId()%>" class="btn btn-danger" tabindex="-1" role="button" aria-disabled="true">
                                           Eliminar
