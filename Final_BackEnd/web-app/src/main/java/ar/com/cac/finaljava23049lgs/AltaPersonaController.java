@@ -32,13 +32,8 @@ public class AltaPersonaController extends HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException{
-
-
-    
-   
-   
-       
-       /*
+      
+        /*
         Persona persona1 = new Persona("Perez", "Jorge", 25);
         System.out.println(persona1);
 
@@ -49,8 +44,7 @@ public class AltaPersonaController extends HttpServlet{
         System.out.println("------------------------");
         System.out.println(usuper);
          */
-
-       
+      
         /*
         //hablar puedo usar los metodos de dao sin saber quien cumple el contrato
         //usando los metodos que tiene la dao sin saber quien cumple el contrato
@@ -60,19 +54,46 @@ public class AltaPersonaController extends HttpServlet{
         //Del front tendria que obtener los siguientes valores:
          */
         
-        String apellido ="NombreDePrueba";
-        String nombre = "ApeDePrueba";
-        int edad = 10 ;
-        //boolean tieneUsuario = true;
-        //String foto = "fotoinstancia";
+        System.out.println("AltaArticuloController");
+        String apellido =req.getParameter("apellido");
+        String nombre =req.getParameter("nombre");
+        int edad = Integer.parseInt(req.getParameter("edad"));
         LocalDateTime fechaRegistro = LocalDateTime.now();
-        String user= "del form";
-        String pass ="del form";
+        String user= "user";
+        String pass ="pass";
         String codigo = "XYZ";
 
         
         
         Persona nuevaPersona = new Usuario(apellido,nombre,edad,user,pass,fechaRegistro,codigo);
+
+
+
+     
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         //interface nombre = new claseQueLaImplementa();
         DAO dao = new DAOImpl();
